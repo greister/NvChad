@@ -47,6 +47,8 @@ M.options = {
    shiftwidth = 2,
    smartindent = true,
    mapleader = " ",
+   ---- 
+   maplocalleader = ",",
    autosave = false,
    enable_insertNav = true, -- navigation in insertmode
    -- used for updater
