@@ -314,7 +314,7 @@ return packer.startup(function()
     -- Startify
    use {
       "mhinz/vim-startify",
-      setup = function()
+      config = function()
          require "plugins.startify"
       end,
    }
@@ -324,6 +324,7 @@ return packer.startup(function()
     config = function()
       require "plugins.tmux"
     end
+ }
 end)
 
 
