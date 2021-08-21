@@ -9,5 +9,5 @@ vim.g.startify_lists = {
 }
 vim.g.startify_bookmarks = {
       '~/.config/nvim/init.lua',
-      '~/.config/nvim/lua/plugins.lua',
+      '~/.config/nvim/lua/plugins/',
     }
