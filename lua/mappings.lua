@@ -178,6 +178,11 @@ M.telescope = function()
    map("n", m.help_tags, ":Telescope help_tags<CR>", opt)
    map("n", m.oldfiles, ":Telescope oldfiles<CR>", opt)
    map("n", m.themes, ":Telescope themes<CR>", opt)
+   --
+   map("n", m.find_files_config, ":Telescope find_files{cwd = '~/.config/nvim' }")
+   map("n", m.live_grep_config, ":Telescope live_grep{cwd = '~/.config/nvim'}")
+   map("n", m.find_files_local, ":Telescope find_files{cwd = '%:p:h'}")
+   map("n", m.live_grep_local, ":Telescope live_grep{cwd = '%:p:h'} ")
 end
 
 M.telescope_media = function()
@@ -185,4 +190,17 @@ M.telescope_media = function()
    map("n", m.media_files, ":Telescope media_files <CR>", opt)
 end
 
+M.tmux = function()
+-- Allow moving the cursor switch from nvim windows to tmux windows
+
+   map("n", "C-h", [[<Cmd>lua require("tmux").move_left()<CR>]], opt)
+   map("n", "C-j", [[<Cmd>lua require("tmux").move_bottom()<CR>]], opt)
+   map("n", "C-k", [[<Cmd>lua require("tmux").move_top()<CR>]], opt)
+   map("n", "C-l", [[<Cmd>lua require("tmux").move_right()<CR>]], opt)
+
+   map("n", "M-h", [[<Cmd>lua require("tmux").resize_left()<CR>]], opt)
+   map("n", "M-j", [[<Cmd>lua require("tmux").resize_bottom()<CR>]], opt)
+   map("n", "M-k", [[<Cmd>lua require("tmux").resize_top()<CR>]], opt)
+   map("n", "M-l", [[<Cmd>lua require("tmux").resize_right()<CR>]], opt)
+   end
 return M

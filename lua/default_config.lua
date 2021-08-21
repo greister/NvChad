@@ -114,6 +114,11 @@ M.mappings = {
       help_tags = "<leader>fh",
       oldfiles = "<leader>fo",
       themes = "<leader>th",
+      --
+      find_files_config = "<leader>fc",
+      live_grep_config = "<leader>/c",
+      find_files_local = "<localleader>ff",
+      live_grep_local = "<localleader>//"
    },
    telescope_media = {
       media_files = "<leader>fp",
