@@ -235,21 +235,21 @@ return packer.startup(function()
       end,
    }
 
-   use {
-      "glepnir/dashboard-nvim",
-      disable = not plugin_status.dashboard_nvim,
-      cmd = {
-         "Dashboard",
-         "DashboardNewFile",
-         "DashboardJumpMarks",
-         "SessionLoad",
-         "SessionSave",
-      },
-      setup = function()
-         require "plugins.dashboard"
-         require("mappings").dashboard()
-      end,
-   }
+   -- use {
+   --    "glepnir/dashboard-nvim",
+   --    disable = not plugin_status.dashboard_nvim,
+   --    cmd = {
+   --       "Dashboard",
+   --       "DashboardNewFile",
+   --       "DashboardJumpMarks",
+   --       "SessionLoad",
+   --       "SessionSave",
+   --    },
+   --    setup = function()
+   --       require "plugins.dashboard"
+   --       require("mappings").dashboard()
+   --    end,
+   -- }
 
    -- load autosave only if its globally enabled
    use {
@@ -310,4 +310,17 @@ return packer.startup(function()
          require("mappings").fugitive()
       end,
    }
+
+    -- Startify
+   use {
+      "mhinz/vim-startify"
+   }
+   --  tmux function
+   use {
+    "aserowy/tmux.nvim",
+    config = function()
+      require "plugins.tmux"
+    end
 end)
+
+
