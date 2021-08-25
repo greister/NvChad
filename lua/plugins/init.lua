@@ -181,30 +181,27 @@ return packer.startup(function()
    }
 
    -- misc plugins
-   use {
-      "windwp/nvim-autopairs",
-      after = "nvim-compe",
-      config = function()
-         require "plugins.configs.autopairs"
+
       end,
    }
 
    use {
-      "andymass/vim-matchup",
-      disable = not plugin_status.vim_matchup,
-      event = "CursorMoved",
-   }
-
-   -- smooth scroll
-   use {
-      "karb94/neoscroll.nvim",
-      disable = not plugin_status.neoscroll,
-      event = "WinScrolled",
+      "glepnir/dashboard-nvim",
+      disable = not plugin_status.dashboard,
+      cmd = {
+         "Dashboard",
+         "DashboardNewFile",
+         "DashboardJumpMarks",
+         "SessionLoad",
+         "SessionSave",
+      },
       config = function()
-         require("plugins.configs.others").neoscroll()
+         require "plugins.configs.dashboard"
+      end,
+      setup = function()
+         require("core.mappings").dashboard()
       end,
    }
-
 
    use {
       "sbdchd/neoformat",
@@ -308,6 +305,21 @@ return packer.startup(function()
          require("core.mappings").vim_fugitive()
       end,
    }
+)
+      "tpope/vim-fugitive",
+      disable = not plugin_status.vim_fugitive,
+      cmd = {
+         "Git",
+         "Gdiff",
+         "Gdiffsplit",
+         "Gvdiffsplit",
+         "Gwrite",
+         "Gw",
+      },
+      setup = function()
+         require("core.mappings").vim_fugitive()
+      end,
+   }
 
     -- Startify
    use {
@@ -329,6 +341,6 @@ return packer.startup(function()
          require "plugins.barbar"
       end,
    }
-end)
+)
 
 
