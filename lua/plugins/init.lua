@@ -305,7 +305,8 @@ return packer.startup(function()
          require("core.mappings").vim_fugitive()
       end,
    }
-)
+
+   use {
       "tpope/vim-fugitive",
       disable = not plugin_status.vim_fugitive,
       cmd = {
@@ -333,7 +334,7 @@ return packer.startup(function()
     "aserowy/tmux.nvim",
     config = function()
       require "plugins.configs.tmux"
-    end
+    end,
  }
    use {
       "romgrk/barbar.nvim",
