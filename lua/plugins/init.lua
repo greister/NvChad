@@ -325,20 +325,20 @@ return packer.startup(function()
    use {
       "mhinz/vim-startify",
       config = function()
-         require "plugins.startify"
+         require "plugins.configs.startify"
       end,
    }
    --  tmux function
    use {
     "aserowy/tmux.nvim",
     config = function()
-      require "plugins.tmux"
+      require "plugins.configs.tmux"
     end
  }
    use {
       "romgrk/barbar.nvim",
       config = function()
-         require "plugins.barbar"
+         require "plugins.configs.barbar"
       end,
    }
 )
