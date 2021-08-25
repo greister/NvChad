@@ -324,6 +324,12 @@ return packer.startup(function()
       require "plugins.tmux"
     end
  }
+   use {
+      "romgrk/barbar.nvim",
+      config = function()
+         require "plugins.barbar"
+      end,
+   }
 end)
 
 
